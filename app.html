@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            body {
+                background-color: #1d1d1d;
+            }
+            button {
+                background-color: #eb4141;
+                border: none;
+                color: white;
+                padding: 12px 20px;
+                margin: 10px;
+                display: inline-block;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            button:hover {
+                background-color: #dd5757;
+                cursor: pointer;
+                transition: 0.1s
+            }
+            .container {
+                position: relative;
+                width: 100%;
+                height: 90%;
+            }
+        </style>
+        <script src='https://meet.jit.si/external_api.js'></script>
+        <script src="app.js"></script>
+        
+        <script>
+
+        window.onload = function(){
+            let meetingInProg = false;
+
+            document.querySelector('#btnStart').addEventListener('click', function(){
+                while(!meetingInProg){
+                    running = true;
+                    StartMeeting();
+                }
+            });  
+        }
+            
+        </script>
+    </head>
+    <body style="text-align: center">
+        <button id='btnStart'>START CALL</button>
+        
+        <br />
+        
+        <div class="container">
+            <div id='jitsi-meet-conf-container'></div>
+        </div>
+    </body>
+</html>
